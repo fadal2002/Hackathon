@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "hackathon-a5c7c": {
+      "hosting": {
+        "hackathon-proj": [
+          "hackathon-a5c7c"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "hackathon-a5c7c"
+  }
+}
