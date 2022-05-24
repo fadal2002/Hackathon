@@ -12,14 +12,13 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { ScanningPageComponent } from './scanning-page/scanning-page.component';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { NavigationComponent } from './navigation/navigation.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainPageComponent,
-    ScanningPageComponent
+    ScanningPageComponent,
     NavigationComponent
   ],
   imports: [
@@ -30,7 +29,6 @@ import { FormsModule } from '@angular/forms';
     ZXingScannerModule,
     FormsModule,
     provideDatabase(() => getDatabase()),
-    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
