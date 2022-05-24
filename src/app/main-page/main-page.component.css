@@ -1,0 +1,14 @@
+.headerSection {
+    background-color: #e63232;
+    padding: 20px;
+    color: white;
+}
+
+.mainContent {
+    background-color: #33e62d;
+    height: 100%;
+}
+
+.mainContentHeader {
+    padding-top: 10px;
+}
