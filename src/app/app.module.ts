@@ -11,6 +11,8 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { MainPageComponent } from './main-page/main-page.component';
 import { ScanningPageComponent } from './scanning-page/scanning-page.component';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import { NavigationComponent } from './navigation/navigation.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -18,6 +20,7 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     MainPageComponent,
     ScanningPageComponent
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ import { FormsModule } from '@angular/forms';
     AngularFireDatabaseModule,
     ZXingScannerModule,
     FormsModule,
-    provideDatabase(() => getDatabase())
+    provideDatabase(() => getDatabase()),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

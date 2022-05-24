@@ -1,0 +1,10 @@
+.ivanti-logo {
+  height: 40px;
+  width: 112.94px;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+  text-decoration-color: #e63232;
+  text-underline-offset: 5px;
+}
