@@ -23,6 +23,7 @@ export class ScanningPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.enableScannerFrequently();
   }
 
   public scanSuccessHandler(event: any) {
@@ -30,6 +31,11 @@ export class ScanningPageComponent implements OnInit {
     console.log(event);
     this.scannedResult = event;
     this.isScannerEnabled = false;
+  }
+
+  private enableScannerFrequently(){
+    this.isScannerEnabled = true;
+    setTimeout(() =>{ this.isScannerEnabled = false;  setTimeout(() =>{ this.enableScannerFrequently();  }, 10000);}, 20000);
   }
 
   public verifyScannerId() {
