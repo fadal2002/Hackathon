@@ -1,11 +1,16 @@
+.nav-section{
+    height: 56px;
+    width: 100%;
+}
 .headerSection {
+    height: 86px;
     background-color: #e63232;
     padding: 20px;
     color: white;
 }
 
 .mainContent {
-    height: 100%;
+    height: calc(100% - 142px);
 }
 
 .mainContentHeader {

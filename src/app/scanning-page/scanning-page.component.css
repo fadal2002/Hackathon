@@ -19,7 +19,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: crimson;
+    background-color: #e63232;
     border-radius: 5px;
     row-gap: 50px;
 }
@@ -50,7 +50,7 @@
     height: 50px;
     border-radius: 5px;
     background: white;
-    color: crimson;
+    color: #e63232;
     font-size: 24px;
     border: none;
     outline: none;
@@ -86,5 +86,5 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: red;
+    color: #e63232;
 }
