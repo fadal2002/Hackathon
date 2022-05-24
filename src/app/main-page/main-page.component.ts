@@ -11,9 +11,9 @@ export class MainPageComponent implements OnInit {
   constructor(private firebaseService: FirebaseService) { }
 
   ngOnInit(): void {
-    this.firebaseService.getTest().valueChanges().subscribe((data:any) => {
-      console.log(data);
-    })
+    // this.firebaseService.getTest().valueChanges().subscribe((data:any) => {
+    //   console.log(data);
+    // })
   }
 
 }
