@@ -9,18 +9,22 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { MainPageComponent } from './main-page/main-page.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainPageComponent
+    MainPageComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    provideDatabase(() => getDatabase())
+    provideDatabase(() => getDatabase()),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
