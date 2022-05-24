@@ -2,15 +2,18 @@
     <div class="inputs">
         <div class="input-container">
             <h4>Uid</h4>
-            <input class="input" placeholder="300" [(ngModel)]="uid">
+            <input class="input" placeholder="e.g. 300" [(ngModel)]="uid">
         </div>    
         <div class="input-container">
             <h4>Bay ID</h4>
-            <input class="input" placeholder="1A" [(ngModel)]="bayID">
-        </div>    
+            <input class="input" placeholder="e.g. 1A" [(ngModel)]="bayID">
+        </div>   
         <div class="input-container">
-            <h4>Is Scanner Enabled (true/false)</h4>
-            <input class="input" [(ngModel)]="isEnabled">
+            <h4>Is Scanner Enabled</h4>
+            <div class="radio" >
+                <input type="radio" name="yes" value=true [(ngModel)]="isEnabled"> yes
+                <input type="radio" name="no" value=false [(ngModel)]="isEnabled"> no
+            </div>
         </div>
     </div>
     <div class="button">
