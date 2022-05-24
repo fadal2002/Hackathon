@@ -9,17 +9,23 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { MainPageComponent } from './main-page/main-page.component';
+import { ScanningPageComponent } from './scanning-page/scanning-page.component';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainPageComponent
+    MainPageComponent,
+    ScanningPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
+    ZXingScannerModule,
+    FormsModule,
     provideDatabase(() => getDatabase())
   ],
   providers: [],
