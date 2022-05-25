@@ -1,21 +1,26 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
+import { Scanner } from '../models/scanner';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseService {
-  private testListRef: AngularFireList<string>;
+  private scannersListRef: AngularFireList<Scanner>;
+  private scannerUidRef: AngularFireList<string>
+
 
   constructor(private db: AngularFireDatabase) {
-    this.testListRef = db.list('/test');
+    this.scannersListRef = db.list('/scanners');
+    this.scannerUidRef = db.list('/scannerUids');
   }
 
-  public getTest(): AngularFireList<string> {
-    return this.testListRef;
+  public getScanners(): AngularFireList<Scanner> {
+    return this.scannersListRef;
   }
 
-  public addTest(text: string) {
-    this.testListRef.push(text);
+  public addScanners(scanObject: Scanner) {
+    this.db.database.ref().child(`/scanners/${scanObject.uid}`).set(scanObject);
+    this.scannerUidRef.push(scanObject.uid)
   }
 }
