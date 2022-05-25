@@ -1,0 +1,126 @@
+<div class="home-container">
+    <div class="dashboards">
+        <dx-pie-chart
+        id="pie"
+        type="doughnut"
+        title="Bays In Use"
+        [dataSource]="baysUsage"
+        centerTemplate="centerTemplate"
+        [innerRadius]="0.65"
+      >
+        <dxi-series argumentField="key" valueField="value">
+          <dxo-label [visible]="true">
+            <dxo-connector [visible]="true"></dxo-connector>
+          </dxo-label>
+        </dxi-series>
+        <dxo-export [enabled]="true"></dxo-export>
+        <dxo-legend
+          [margin]="0"
+          horizontalAlignment="right"
+          verticalAlignment="top"
+        ></dxo-legend>
+
+        <svg *dxTemplate="let pieChart of 'centerTemplate'">
+            <circle
+              cx="100"
+              cy="100"
+              [attr.r]="pieChart.getInnerRadius() - 6"
+              fill="#eee"
+            ></circle>
+            <text
+              text-anchor="middle"
+              style="font-size: 18px"
+              x="100"
+              y="100"
+              fill="#494949"
+            >
+              <tspan x="100">Total</tspan>
+              <!-- display: inline -->
+              <tspan x="100" dy="20px" style="font-weight: 600">50</tspan>
+            </text>
+          </svg>
+      </dx-pie-chart>
+
+      <dx-pie-chart
+      id="pie"
+      type="doughnut"
+      title="Trailers Stored (7 days+)"
+      [dataSource]="baysUsage"
+      centerTemplate="centerTemplate"
+      [innerRadius]="0.65"
+    >
+      <dxi-series argumentField="key" valueField="value">
+        <dxo-label [visible]="true">
+          <dxo-connector [visible]="true"></dxo-connector>
+        </dxo-label>
+      </dxi-series>
+      <dxo-export [enabled]="true"></dxo-export>
+      <dxo-legend
+        [margin]="0"
+        horizontalAlignment="right"
+        verticalAlignment="top"
+      ></dxo-legend>
+
+      <svg *dxTemplate="let pieChart of 'centerTemplate'">
+          <circle
+            cx="100"
+            cy="100"
+            [attr.r]="pieChart.getInnerRadius() - 6"
+            fill="#eee"
+          ></circle>
+          <text
+            text-anchor="middle"
+            style="font-size: 18px"
+            x="100"
+            y="100"
+            fill="#494949"
+          >
+            <tspan x="100">Total</tspan>
+            <!-- display: inline -->
+            <tspan x="100" dy="20px" style="font-weight: 600">50</tspan>
+          </text>
+        </svg>
+    </dx-pie-chart>
+
+    <dx-pie-chart
+    id="pie"
+    type="doughnut"
+    title="Bay Area Events"
+    [dataSource]="bayEvents"
+    centerTemplate="centerTemplate"
+    [innerRadius]="0.65"
+  >
+    <dxi-series argumentField="key" valueField="value">
+      <dxo-label [visible]="true">
+        <dxo-connector [visible]="true"></dxo-connector>
+      </dxo-label>
+    </dxi-series>
+    <dxo-export [enabled]="true"></dxo-export>
+    <dxo-legend
+      [margin]="0"
+      horizontalAlignment="right"
+      verticalAlignment="top"
+    ></dxo-legend>
+
+    <svg *dxTemplate="let pieChart of 'centerTemplate'">
+        <circle
+          cx="100"
+          cy="100"
+          [attr.r]="pieChart.getInnerRadius() - 6"
+          fill="#eee"
+        ></circle>
+        <text
+          text-anchor="middle"
+          style="font-size: 18px"
+          x="100"
+          y="100"
+          fill="#494949"
+        >
+          <tspan x="100">Total</tspan>
+          <!-- display: inline -->
+          <tspan x="100" dy="20px" style="font-weight: 600">107</tspan>
+        </text>
+      </svg>
+  </dx-pie-chart>
+    </div>
+</div>

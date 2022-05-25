@@ -15,6 +15,8 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ScannerRegistrationComponent } from './scanner-registration/scanner-registration.component';
 import { FormsModule } from '@angular/forms';
+import { HomePageComponent } from './home-page/home-page.component';
+import { DxPieChartModule } from 'devextreme-angular';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     MainPageComponent,
     NavigationComponent,
     ScanningPageComponent,
-    ScannerRegistrationComponent
+    ScannerRegistrationComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +34,7 @@ import { FormsModule } from '@angular/forms';
     AngularFireDatabaseModule,
     ZXingScannerModule,
     FormsModule,
+    DxPieChartModule,
     provideDatabase(() => getDatabase()),
     NgbModule
   ],
