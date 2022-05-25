@@ -1,0 +1,6 @@
+<div *ngIf="showNotification" class="alert alert-dismissible fade show notification" role="alert">
+    <div class="notificationHeader">{{notificationTitle}}</div> <a><div class="notificationMessage">{{notificationMessage}}</div></a>
+    <button type="button" class="close" (click)="onClose()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>

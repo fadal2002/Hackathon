@@ -17,6 +17,8 @@ import { ScannerRegistrationComponent } from './scanner-registration/scanner-reg
 import { FormsModule } from '@angular/forms';
 import { HomePageComponent } from './home-page/home-page.component';
 import { DxPieChartModule } from 'devextreme-angular';
+import { NotificationComponent } from './notification/notification.component';
+import { NotificationSystemComponent } from './notification-system/notification-system.component'
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { DxPieChartModule } from 'devextreme-angular';
     NavigationComponent,
     ScanningPageComponent,
     ScannerRegistrationComponent,
-    HomePageComponent
+    HomePageComponent,
+    NotificationComponent,
+    NotificationSystemComponent,
   ],
   imports: [
     BrowserModule,

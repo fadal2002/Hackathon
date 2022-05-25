@@ -1,0 +1,31 @@
+.notification {
+    width: 250px;
+    height: auto;
+    background: linear-gradient(to bottom right,#e64f4f , rgb(184, 12, 12));
+    margin-bottom: 4px;
+    opacity: 85%;
+    color:white;
+  }
+  
+.notificationHeader {
+    display: block;
+    padding-top: 1px;
+    font-weight: bold;
+    margin: 0;
+
+}
+
+.notificationMessage {
+    display: block;
+    padding-top: 1px;
+    margin: 0;
+}
+
+.alert-dismissible .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    padding: 0rem 0.5rem;
+    color: inherit;
+}
