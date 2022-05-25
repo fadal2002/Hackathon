@@ -16,6 +16,8 @@ export class ScannerRegistrationComponent implements OnInit {
 
   public scanObject: Scanner
 
+  public enabledSetting: string
+
   public constructor(
     private firebaseService: FirebaseService 
     ) 
@@ -23,6 +25,7 @@ export class ScannerRegistrationComponent implements OnInit {
     this.uid = "";
     this.bayID = "";
     this.isEnabled = false;
+    this.enabledSetting = ""
 
     this.scanObject = {
       uid: this.uid,
@@ -33,23 +36,30 @@ export class ScannerRegistrationComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
 
-  public addClick(){ 
+  public addClick(){
+    var enabled = false;
+
+    if(this.enabledSetting === "true"){
+      enabled = true
+      
+    }else{
+      enabled = false
+    }
+
     this.scanObject = {
       uid: this.uid,
       bayID: this.bayID,
-      isEnabled: this.isEnabled
+      isEnabled: enabled
     }
-
     this.firebaseService.addScanners(this.scanObject);
     const notification: NotificationData = {Header: "Scanner Registered", Body: `Scanner ID (${this.uid}) has been
      registered with Bay ID (${this.bayID}).`};
     this.firebaseService.addNotification(notification);
-  }
 
-  public testFunction(event:any){
-    // console.log(this.uid);
-    console.log(this.scanObject);
-    this.scanObject.uid = "";
+    this.uid = "";
+    this.bayID = "";
+    this.isEnabled = false;
   }
 }
