@@ -12,6 +12,8 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { ScanningPageComponent } from './scanning-page/scanning-page.component';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { NavigationComponent } from './navigation/navigation.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ScannerRegistrationComponent } from './scanner-registration/scanner-registration.component';
 import { FormsModule } from '@angular/forms';
 import { HomePageComponent } from './home-page/home-page.component';
 import { DxPieChartModule } from 'devextreme-angular';
@@ -20,8 +22,9 @@ import { DxPieChartModule } from 'devextreme-angular';
   declarations: [
     AppComponent,
     MainPageComponent,
-    ScanningPageComponent,
     NavigationComponent,
+    ScanningPageComponent,
+    ScannerRegistrationComponent
     HomePageComponent
   ],
   imports: [
@@ -33,6 +36,7 @@ import { DxPieChartModule } from 'devextreme-angular';
     FormsModule,
     DxPieChartModule,
     provideDatabase(() => getDatabase()),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
