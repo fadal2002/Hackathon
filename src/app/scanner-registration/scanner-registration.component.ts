@@ -58,10 +58,4 @@ export class ScannerRegistrationComponent implements OnInit {
     this.bayID = "";
     this.isEnabled = false;
   }
-
-  public testFunction(event:any){
-    // console.log(this.uid);
-    console.log(this.scanObject);
-    this.scanObject.uid = "";
-  }
 }
