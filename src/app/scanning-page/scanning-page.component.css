@@ -88,3 +88,7 @@
     align-items: center;
     color: #e63232;
 }
+
+.error-message{
+    color: white;
+}

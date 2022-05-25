@@ -1,6 +1,7 @@
 <div class="first-container" *ngIf="!isValidScanner">
     <div class="verification-container">
         <p class="header">Verify Scanner ID</p>
+        <p class="error-message" *ngIf="showInvalidId">*Scanner Id is Invalid</p>
         <input class="scanner-id-input" type="text" placeholder="Enter your scanner ID..." [(ngModel)]="scannerId">
         <Button class="verify-button" (click)="verifyScannerId()">Verify</Button>
     </div>
@@ -10,7 +11,6 @@
         <zxing-scanner
         (scanSuccess)="scanSuccessHandler($event)"
         ></zxing-scanner>
-        <p>{{scannedResult}}</p>
     </div>
     <div class="disabled-container" *ngIf="!isScannerEnabled">
         <h1 class="disabled-text">Scanner Disabled</h1>

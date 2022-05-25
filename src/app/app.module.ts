@@ -24,7 +24,7 @@ import { DxPieChartModule } from 'devextreme-angular';
     MainPageComponent,
     NavigationComponent,
     ScanningPageComponent,
-    ScannerRegistrationComponent
+    ScannerRegistrationComponent,
     HomePageComponent
   ],
   imports: [
