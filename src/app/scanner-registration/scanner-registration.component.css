@@ -12,7 +12,7 @@
     height: 70%;
     display: flex;
     justify-content: center;
-    background: linear-gradient(to bottom right,#9a70ea , crimson);
+    background: #e63232;
     border-radius: 5px;
     color: white;
     align-items: center;
@@ -55,7 +55,7 @@
 }
 
 .buttonTheme {
-  background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+  background: linear-gradient(to bottom right, #478aef, #723ef6);
   border: 0;
   border-radius: 12px;
   color: #FFFFFF; 
