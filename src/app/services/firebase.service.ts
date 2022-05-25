@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
 import { Scanner } from '../models/scanner';
-// import { Scannw }
 
 @Injectable({
   providedIn: 'root'
