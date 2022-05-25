@@ -9,6 +9,8 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { MainPageComponent } from './main-page/main-page.component';
+import { ScanningPageComponent } from './scanning-page/scanning-page.component';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { NavigationComponent } from './navigation/navigation.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ScannerRegistrationComponent } from './scanner-registration/scanner-registration.component';
@@ -18,7 +20,8 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     MainPageComponent,
-    NavigationComponent  ,
+    NavigationComponent,
+    ScanningPageComponent,
     ScannerRegistrationComponent
   ],
   imports: [
@@ -26,6 +29,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
+    ZXingScannerModule,
     FormsModule,
     provideDatabase(() => getDatabase()),
     NgbModule
