@@ -53,11 +53,9 @@ export class ScannerRegistrationComponent implements OnInit {
       isEnabled: enabled
     }
     this.firebaseService.addScanners(this.scanObject);
-  }
 
-  public testFunction(event:any){
-    // console.log(this.uid);
-    console.log(this.scanObject);
-    this.scanObject.uid = "";
+    this.uid = "";
+    this.bayID = "";
+    this.isEnabled = false;
   }
 }
