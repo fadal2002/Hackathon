@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BayRecord } from '../models/bay-record';
 import { Scanner } from '../models/scanner';
+import { NotificationData } from '../notification-system/notification-system.component';
 import { FirebaseService } from '../services/firebase.service';
 
 @Component({
@@ -57,6 +58,9 @@ export class ScanningPageComponent implements OnInit {
     const bayRecord: BayRecord = {trailerId: event, bayId: this.currentScanner?.bayID,
        parkDate: Date.now()};
     this.firebaseService.addBayRecord(bayRecord);
+    const notification: NotificationData = {Header: "Bay Update", Body: `Trailer ID (${event}) has parked
+     in Bay ID (${this.currentScanner?.bayID}).`};
+    this.firebaseService.addNotification(notification);
     this.isScannerEnabled = false;
   }
 
@@ -69,7 +73,9 @@ export class ScanningPageComponent implements OnInit {
         this.previousScannedResult = "";
         const bayRecord: BayRecord = {trailerId: "", bayId: this.currentScanner?.bayID,
           parkDate: Date.now()};
-          this.firebaseService.addBayRecord(bayRecord);
+        this.firebaseService.addBayRecord(bayRecord);
+        const notification: NotificationData = {Header: "Bay Update", Body: `Bay ID (${this.currentScanner?.bayID}) is now available.`};
+       this.firebaseService.addNotification(notification);
       }
       setTimeout(() =>{ this.enableScannerFrequently(); }, 10000);
     }, 20000);

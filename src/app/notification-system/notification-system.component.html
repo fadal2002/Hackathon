@@ -1,4 +1,3 @@
 <div ID="notificationSection">
-    <button class="btn btn-primary" (click)="CreateNotification('Created', 'Body text')"></button>
     <app-notification *ngFor="let i of NotificationData" notificationTitle={{i.Header}}  notificationMessage={{i.Body}} ></app-notification>
 </div>

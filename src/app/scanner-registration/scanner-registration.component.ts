@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Scanner } from '../models/scanner';
+import { NotificationData } from '../notification-system/notification-system.component';
 import { FirebaseService } from '../services/firebase.service';
 
 
@@ -41,6 +42,9 @@ export class ScannerRegistrationComponent implements OnInit {
     }
 
     this.firebaseService.addScanners(this.scanObject);
+    const notification: NotificationData = {Header: "Scanner Registered", Body: `Scanner ID (${this.uid}) has been
+     registered with Bay ID (${this.bayID}).`};
+    this.firebaseService.addNotification(notification);
   }
 
   public testFunction(event:any){

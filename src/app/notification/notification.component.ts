@@ -15,7 +15,7 @@ export class NotificationComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-  
+    setTimeout(() => {this.onClose();}, 5000);
   }
 
   public onClose() {

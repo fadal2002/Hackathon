@@ -1,9 +1,8 @@
 .notification {
     width: 250px;
     height: auto;
-    background: linear-gradient(to bottom right,#e64f4f , rgb(184, 12, 12));
+    background: #e64f4f;
     margin-bottom: 4px;
-    opacity: 85%;
     color:white;
   }
   
