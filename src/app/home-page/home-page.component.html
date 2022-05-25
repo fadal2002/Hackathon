@@ -36,7 +36,7 @@
             >
               <tspan x="100">Total</tspan>
               <!-- display: inline -->
-              <tspan x="100" dy="20px" style="font-weight: 600">50</tspan>
+              <tspan x="100" dy="20px" style="font-weight: 600">{{bays.length}}</tspan>
             </text>
           </svg>
       </dx-pie-chart>
@@ -44,8 +44,8 @@
       <dx-pie-chart
       id="pie"
       type="doughnut"
-      title="Trailers Stored (7 days+)"
-      [dataSource]="baysUsage"
+      title="Scanner States"
+      [dataSource]="scannerState"
       centerTemplate="centerTemplate"
       [innerRadius]="0.65"
     >
@@ -77,7 +77,7 @@
           >
             <tspan x="100">Total</tspan>
             <!-- display: inline -->
-            <tspan x="100" dy="20px" style="font-weight: 600">50</tspan>
+            <tspan x="100" dy="20px" style="font-weight: 600">{{scanners.length}}</tspan>
           </text>
         </svg>
     </dx-pie-chart>
