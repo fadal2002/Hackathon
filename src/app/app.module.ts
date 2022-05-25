@@ -13,13 +13,16 @@ import { ScanningPageComponent } from './scanning-page/scanning-page.component';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { NavigationComponent } from './navigation/navigation.component';
 import { FormsModule } from '@angular/forms';
+import { HomePageComponent } from './home-page/home-page.component';
+import { DxPieChartModule } from 'devextreme-angular';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainPageComponent,
     ScanningPageComponent,
-    NavigationComponent
+    NavigationComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +31,7 @@ import { FormsModule } from '@angular/forms';
     AngularFireDatabaseModule,
     ZXingScannerModule,
     FormsModule,
+    DxPieChartModule,
     provideDatabase(() => getDatabase()),
   ],
   providers: [],
