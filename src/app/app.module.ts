@@ -19,6 +19,8 @@ import { ScannerRegistrationComponent } from './scanner-registration/scanner-reg
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDropModule } from '@angular/cdk/drag-drop'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomePageComponent } from './home-page/home-page.component';
+import { DxPieChartModule } from 'devextreme-angular';
 import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
@@ -29,7 +31,8 @@ import {MatSelectModule} from '@angular/material/select';
     BayManagementComponent,
     BayManagementAddFormComponent,
     ScanningPageComponent,
-    ScannerRegistrationComponent
+    ScannerRegistrationComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +41,7 @@ import {MatSelectModule} from '@angular/material/select';
     AngularFireDatabaseModule,
     ZXingScannerModule,
     FormsModule,
+    DxPieChartModule,
     provideDatabase(() => getDatabase()),
     NgbModule,
     BrowserAnimationsModule,
