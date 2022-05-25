@@ -12,14 +12,14 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { ScanningPageComponent } from './scanning-page/scanning-page.component';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { NavigationComponent } from './navigation/navigation.component';
-import { NgbModule, NgbOffcanvasModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDropdownModule, NgbModule, NgbOffcanvasModule } from '@ng-bootstrap/ng-bootstrap';
 import { BayManagementComponent } from './bay-management/bay-management.component';
 import { BayManagementAddFormComponent } from './bay-management-add-form/bay-management-add-form.component';
 import { ScannerRegistrationComponent } from './scanner-registration/scanner-registration.component';
-import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDropModule } from '@angular/cdk/drag-drop'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -44,7 +44,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DragDropModule,
     NgbOffcanvasModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSelectModule
     ],
   providers: [],
   bootstrap: [AppComponent]

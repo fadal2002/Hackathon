@@ -1,16 +1,13 @@
 <form [formGroup]="addBayGroup">
   <mat-form-field appearance="fill">
-    <mat-label>Input</mat-label>
-    <input matInput>
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Select</mat-label>
-    <mat-select>
-      <mat-option value="one">First option</mat-option>
-      <mat-option value="two">Second option</mat-option>
+    <mat-label>Scanner</mat-label>
+    <mat-select formControlName="BayName">
+      <mat-option *ngFor="let scanner of scanners" [value]="scanners">
+        {{scanner}}
+      </mat-option>
     </mat-select>
   </mat-form-field>
-  <button>Add Form</button>
+  <button type="button" class="btn btn-light" (click)="addBay()">Add Form</button>
 </form>
 
 <ng-template #content let-offcanvas>

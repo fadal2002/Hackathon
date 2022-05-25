@@ -3,5 +3,8 @@
     <div cdkDragBoundary="#dragable-area" cdkDrag>
         <p>bay-management works!</p>
     </div>
+    <div class="bay" cdkDragBoundary="#dragable-area" cdkDrag *ngFor="let bay of bays;">
+        {{bay}}
+    </div>
 </div>
 <app-bay-management-add-form></app-bay-management-add-form>
