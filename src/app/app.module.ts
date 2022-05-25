@@ -10,13 +10,20 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { MainPageComponent } from './main-page/main-page.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbOffcanvasModule } from '@ng-bootstrap/ng-bootstrap';
+import { BayManagementComponent } from './bay-management/bay-management.component';
+import { BayManagementAddFormComponent } from './bay-management-add-form/bay-management-add-form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DragDropModule } from '@angular/cdk/drag-drop'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainPageComponent,
-    NavigationComponent
+    NavigationComponent,
+    BayManagementComponent,
+    BayManagementAddFormComponent
   ],
   imports: [
     BrowserModule,
@@ -24,8 +31,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     provideDatabase(() => getDatabase()),
-    NgbModule
-  ],
+    NgbModule,
+    BrowserAnimationsModule,
+    DragDropModule,
+    NgbOffcanvasModule,
+    FormsModule,
+    ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
