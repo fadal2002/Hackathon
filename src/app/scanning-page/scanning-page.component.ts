@@ -3,6 +3,7 @@ import { BayRecord } from '../models/bay-record';
 import { Scanner } from '../models/scanner';
 import { NotificationData } from '../notification-system/notification-system.component';
 import { FirebaseService } from '../services/firebase.service';
+import prettyPrint from 'pretty-print-ms';
 
 @Component({
   selector: 'app-scanning-page',
@@ -22,6 +23,7 @@ export class ScanningPageComponent implements OnInit {
   private scannersList: Scanner[] = [];
   private currentScanner: Scanner | undefined;
   private hasScanned: boolean;
+  private previousParkTime: number;
 
   constructor(private firebaseService: FirebaseService) { 
     this.previousScannedResult = "";
@@ -33,6 +35,7 @@ export class ScanningPageComponent implements OnInit {
     this.showInvalidId = false;
     this.currentScanner = {uid: "", bayID: "", isEnabled: false};
     this.hasScanned = false;
+    this.previousParkTime = 0;
 
     this.firebaseService.getScannerUids().valueChanges().subscribe((data: any) => {
       this.scannerUids = data;
@@ -55,8 +58,10 @@ export class ScanningPageComponent implements OnInit {
       return;
     }
     this.previousScannedResult = event;
+    const parkTime = Date.now();
     const bayRecord: BayRecord = {trailerId: event, bayId: this.currentScanner?.bayID,
        parkDate: Date.now(), mapped: false, transform: '' };
+    this.previousParkTime = parkTime;
     this.firebaseService.addBayRecord(bayRecord);
     const notification: NotificationData = {Header: "Bay Update", Body: `Trailer ID (${event}) has parked
      in Bay ID (${this.currentScanner?.bayID}).`};
@@ -70,15 +75,27 @@ export class ScanningPageComponent implements OnInit {
     setTimeout(() =>{ 
       this.isScannerEnabled = false;
       if (!this.hasScanned) {
-        this.previousScannedResult = "";
         const bayRecord: BayRecord = {trailerId: "", bayId: this.currentScanner?.bayID,
           parkDate: Date.now(), mapped: false, transform: '' };
         this.firebaseService.addBayRecord(bayRecord);
         const notification: NotificationData = {Header: "Bay Update", Body: `Bay ID (${this.currentScanner?.bayID}) is now available.`};
-       this.firebaseService.addNotification(notification);
+        if (this.previousScannedResult !== "")
+        {
+          const leaveNotification: NotificationData = {Header: "Trailer Update", Body: `Trailer ID (${this.previousScannedResult}) exited Bay ID (${this.currentScanner?.bayID}).
+          Stay duration: ${this.calculateStayDuration()}`};
+
+          setTimeout(() => {this.firebaseService.addNotification(leaveNotification);}, 2000); 
+          this.firebaseService.addNotification(notification);
+        }
+        this.previousScannedResult = "";
       }
       setTimeout(() =>{ this.enableScannerFrequently(); }, 10000);
     }, 20000);
+  }
+
+  private calculateStayDuration(): string {
+    const duration = Date.now() - this.previousParkTime;
+    return prettyPrint(duration);
   }
 
   public verifyScannerId() {
