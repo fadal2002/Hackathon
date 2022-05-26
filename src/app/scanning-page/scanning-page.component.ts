@@ -56,7 +56,7 @@ export class ScanningPageComponent implements OnInit {
     }
     this.previousScannedResult = event;
     const bayRecord: BayRecord = {trailerId: event, bayId: this.currentScanner?.bayID,
-       parkDate: Date.now()};
+       parkDate: Date.now(), mapped: false, transform: '' };
     this.firebaseService.addBayRecord(bayRecord);
     const notification: NotificationData = {Header: "Bay Update", Body: `Trailer ID (${event}) has parked
      in Bay ID (${this.currentScanner?.bayID}).`};
@@ -72,7 +72,7 @@ export class ScanningPageComponent implements OnInit {
       if (!this.hasScanned) {
         this.previousScannedResult = "";
         const bayRecord: BayRecord = {trailerId: "", bayId: this.currentScanner?.bayID,
-          parkDate: Date.now()};
+          parkDate: Date.now(), mapped: false, transform: '' };
         this.firebaseService.addBayRecord(bayRecord);
         const notification: NotificationData = {Header: "Bay Update", Body: `Bay ID (${this.currentScanner?.bayID}) is now available.`};
        this.firebaseService.addNotification(notification);

@@ -16,13 +16,25 @@ export class BayManagementComponent implements OnInit {
   ngOnInit(): void {
     this.firebaseService.getBayRecords().valueChanges().subscribe((bayRecords: BayRecord[]) => {
       bayRecords.forEach((bayRecord) => {
-        if(bayRecord.mapped){
+        if(bayRecord.mapped && !this.bays.some(x => x.bayId === bayRecord.bayId)){
           this.bays.push(bayRecord)
         }
       })
     })
     this.addBayservice.getBayAdded().subscribe((bayRecord: BayRecord) => {
+      if(this.bays.some( x => x.bayId === bayRecord.bayId)) return;
+      bayRecord.mapped = true
+      this.firebaseService.addBayRecord(bayRecord)
       this.bays.push(bayRecord);
     });
+  }
+
+  drop(e: any): void {
+    const id = e.source.element.nativeElement.id
+    const transform = e.source.element.nativeElement.style.transform
+    const bay = this.bays.find(x => x.bayId === id)
+    if(bay === undefined) return;
+    bay.transform = transform
+    this.firebaseService.addBayRecord(bay)
   }
 }

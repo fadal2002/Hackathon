@@ -1,7 +1,17 @@
 <app-bay-management-add-form></app-bay-management-add-form>
 
 <div id="dragable-area" style="width: 100%; height: 600px; border: solid; border-color: grey; border-width: 1px;">
-    <div [class.green]="bay.trailerId === ''" [class.red]="bay.trailerId !== ''" class="bay" id="{{bay.bayId}}" cdkDragBoundary="#dragable-area" cdkDrag *ngFor="let bay of bays;">
+    <div
+    [class.green]="bay.trailerId === ''"
+    [class.red]="bay.trailerId !== ''"
+    class="bay"
+    
+    id="{{bay.bayId}}"
+    cdkDragBoundary="#dragable-area"
+    cdkDrag
+    *ngFor="let bay of bays; let i = index"
+    [ngStyle]="{'transform': bay.transform}"
+    (cdkDragEnded)="drop($event)">
         {{bay.bayId}}
     </div>
 </div>
