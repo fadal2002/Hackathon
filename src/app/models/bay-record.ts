@@ -1,5 +1,6 @@
 export interface BayRecord {
     trailerId: string,
     bayId: string | undefined,
-    parkDate: number
+    parkDate: number,
+    mapped: boolean
 }

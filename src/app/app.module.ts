@@ -20,7 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDropModule } from '@angular/cdk/drag-drop'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomePageComponent } from './home-page/home-page.component';
-import { DxPieChartModule } from 'devextreme-angular';
+import { DxDataGridModule, DxDropDownBoxModule, DxDropDownButtonModule, DxListModule, DxPieChartModule, DxTemplateModule, DxTreeViewComponent, DxTreeViewModule } from 'devextreme-angular';
 import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
@@ -49,8 +49,14 @@ import {MatSelectModule} from '@angular/material/select';
     NgbOffcanvasModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSelectModule
-    ],
+    MatSelectModule,
+    DxDropDownBoxModule,
+    DxTemplateModule,
+    DxDropDownButtonModule,
+    DxTreeViewModule,
+    DxDataGridModule,
+    DxListModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
