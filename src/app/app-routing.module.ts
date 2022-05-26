@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BayManagementComponent } from './bay-management/bay-management.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ScanningPageComponent } from './scanning-page/scanning-page.component';
 import { ScannerRegistrationComponent } from './scanner-registration/scanner-registration.component';

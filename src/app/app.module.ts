@@ -12,11 +12,16 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { ScanningPageComponent } from './scanning-page/scanning-page.component';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { NavigationComponent } from './navigation/navigation.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDropdownModule, NgbModule, NgbOffcanvasModule } from '@ng-bootstrap/ng-bootstrap';
+import { BayManagementComponent } from './bay-management/bay-management.component';
+import { BayManagementAddFormComponent } from './bay-management-add-form/bay-management-add-form.component';
 import { ScannerRegistrationComponent } from './scanner-registration/scanner-registration.component';
-import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DragDropModule } from '@angular/cdk/drag-drop'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomePageComponent } from './home-page/home-page.component';
-import { DxPieChartModule } from 'devextreme-angular';
+import { DxDataGridModule, DxDropDownBoxModule, DxDropDownButtonModule, DxListModule, DxPieChartModule, DxTemplateModule, DxTreeViewComponent, DxTreeViewModule } from 'devextreme-angular';
+import {MatSelectModule} from '@angular/material/select';
 import { NotificationComponent } from './notification/notification.component';
 import { NotificationSystemComponent } from './notification-system/notification-system.component'
 
@@ -25,6 +30,8 @@ import { NotificationSystemComponent } from './notification-system/notification-
     AppComponent,
     MainPageComponent,
     NavigationComponent,
+    BayManagementComponent,
+    BayManagementAddFormComponent,
     ScanningPageComponent,
     ScannerRegistrationComponent,
     HomePageComponent,
@@ -40,7 +47,19 @@ import { NotificationSystemComponent } from './notification-system/notification-
     FormsModule,
     DxPieChartModule,
     provideDatabase(() => getDatabase()),
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
+    DragDropModule,
+    NgbOffcanvasModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    DxDropDownBoxModule,
+    DxTemplateModule,
+    DxDropDownButtonModule,
+    DxTreeViewModule,
+    DxDataGridModule,
+    DxListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
