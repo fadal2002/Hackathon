@@ -22,6 +22,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomePageComponent } from './home-page/home-page.component';
 import { DxDataGridModule, DxDropDownBoxModule, DxDropDownButtonModule, DxListModule, DxPieChartModule, DxTemplateModule, DxTreeViewComponent, DxTreeViewModule } from 'devextreme-angular';
 import {MatSelectModule} from '@angular/material/select';
+import { NotificationComponent } from './notification/notification.component';
+import { NotificationSystemComponent } from './notification-system/notification-system.component'
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import {MatSelectModule} from '@angular/material/select';
     BayManagementAddFormComponent,
     ScanningPageComponent,
     ScannerRegistrationComponent,
-    HomePageComponent
+    HomePageComponent,
+    NotificationComponent,
+    NotificationSystemComponent,
   ],
   imports: [
     BrowserModule,
